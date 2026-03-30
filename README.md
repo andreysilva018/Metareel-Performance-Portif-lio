@@ -34,3 +34,44 @@ Demonstrar de forma clara e direta como a Metareel Performance ajuda farmácias 
 ---
 
 ## 📁 Estrutura do projeto
+
+/metareel-site
+├── index.html
+├── style.css
+
+---
+
+## 🌐 Deploy
+
+O projeto está publicado utilizando a plataforma Netlify.
+
+---
+
+## 📱 Funcionalidades
+
+- Layout responsivo básico
+- Estrutura de landing page
+- Botão de contato via WhatsApp
+- Seções estratégicas de conversão
+
+---
+
+## 💡 Próximos passos
+
+- Melhorar responsividade para dispositivos móveis
+- Adicionar animações e interatividade
+- Implementar formulário de captura de leads
+- Integração com CRM
+- Desenvolvimento de sistema próprio com Java + Spring Boot
+
+---
+
+## 👨‍💻 Autor
+
+Desenvolvido por [SEU NOME AQUI]
+
+---
+
+## 📞 Contato
+
+Entre em contato para mais informações ou parcerias.
