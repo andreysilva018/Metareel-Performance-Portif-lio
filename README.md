@@ -68,7 +68,7 @@ O projeto está publicado utilizando a plataforma Netlify.
 
 ## 👨‍💻 Autor
 
-Desenvolvido por [SEU NOME AQUI]
+Desenvolvido por Andrey Vinicíus de Souza Silva e Claude.AI
 
 ---
 
