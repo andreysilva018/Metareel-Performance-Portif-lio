@@ -42,30 +42,25 @@
     .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 55% at 50% 0%,rgba(192,132,252,.13) 0%,transparent 68%),radial-gradient(ellipse 50% 40% at 85% 85%,rgba(109,40,217,.1) 0%,transparent 60%),var(--bg)}
     .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(192,132,252,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(192,132,252,.06) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 90% 70% at 50% 0%,black 30%,transparent 80%)}
     .hero-content{position:relative;z-index:2;max-width:860px}
-
     .hero-logo-wrap{display:flex;justify-content:center;margin-bottom:28px;animation:fadeUp .5s ease both}
     .hero-logo-ring{position:relative;width:110px;height:110px;display:flex;align-items:center;justify-content:center}
     .hero-logo-ring::before{content:'';position:absolute;inset:-3px;border-radius:50%;background:conic-gradient(from 0deg,#4c1d95,#c084fc,#e9d5ff,#c084fc,#4c1d95);animation:spin 5s linear infinite}
     .hero-logo-ring::after{content:'';position:absolute;inset:2px;border-radius:50%;background:var(--bg)}
     @keyframes spin{to{transform:rotate(360deg)}}
     .hero-logo-img{width:82px;height:82px;object-fit:contain;position:relative;z-index:1;filter:drop-shadow(0 0 14px rgba(192,132,252,.5))}
-
     .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(192,132,252,.09);border:1px solid rgba(192,132,252,.3);border-radius:50px;padding:8px 18px;font-size:.76rem;color:var(--purple-l);letter-spacing:.08em;text-transform:uppercase;font-weight:700;margin-bottom:28px;animation:fadeUp .7s ease both}
     .hero-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--purple-l);animation:pulse 2s infinite}
     @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(192,132,252,.5)}50%{box-shadow:0 0 0 7px rgba(192,132,252,0)}}
-
     .hero h1{font-size:clamp(2.2rem,5.5vw,4rem);font-weight:900;line-height:1.1;letter-spacing:-.02em;margin-bottom:24px;animation:fadeUp .7s .1s ease both}
     .hero h1 span{background:linear-gradient(135deg,#e9d5ff 0%,#c084fc 45%,#a855f7 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
     .hero-sub{font-size:clamp(.98rem,2.4vw,1.18rem);color:var(--muted);max-width:580px;margin:0 auto 48px;line-height:1.65;animation:fadeUp .7s .2s ease both}
     .hero-actions{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;animation:fadeUp .7s .3s ease both}
-
     .btn-primary{display:inline-flex;align-items:center;gap:10px;background:var(--purple);color:#fff;text-decoration:none;padding:15px 32px;border-radius:8px;font-weight:700;font-size:.94rem;transition:all .25s}
     .btn-primary:hover{background:var(--purple-d);transform:translateY(-2px);box-shadow:0 10px 30px rgba(124,58,237,.5)}
     .btn-primary svg{transition:transform .25s}
     .btn-primary:hover svg{transform:translateX(3px)}
     .btn-ghost{display:inline-flex;align-items:center;gap:8px;color:var(--muted);text-decoration:none;font-size:.9rem;transition:color .2s}
     .btn-ghost:hover{color:var(--white)}
-
     .hero-stats{display:flex;justify-content:center;gap:48px;margin-top:68px;padding-top:44px;border-top:1px solid var(--border);flex-wrap:wrap;animation:fadeUp .7s .4s ease both}
     .stat-item{text-align:center}
     .stat-num{font-size:2.1rem;font-weight:900;color:var(--white);letter-spacing:-.03em}
@@ -140,19 +135,122 @@
     .equipe-header{text-align:center;max-width:560px;margin:0 auto 64px}
     .equipe-header p{color:var(--muted);font-size:1rem;line-height:1.7}
     .team-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:20px}
-    .team-card{background:rgba(192,132,252,.05);border:1px solid var(--border);border-radius:18px;padding:28px 16px 24px;text-align:center;transition:all .3s;position:relative;overflow:hidden}
+
+    .team-card{
+      background:rgba(192,132,252,.05);border:1px solid var(--border);
+      border-radius:18px;padding:28px 16px 24px;text-align:center;
+      transition:all .3s;position:relative;overflow:hidden;
+    }
     .team-card::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(192,132,252,.06) 0%,transparent 60%);opacity:0;transition:opacity .3s;pointer-events:none}
     .team-card:hover{border-color:rgba(192,132,252,.45);transform:translateY(-7px);box-shadow:0 24px 48px rgba(0,0,0,.4),0 0 50px rgba(109,40,217,.18)}
     .team-card:hover::after{opacity:1}
-    .team-photo-wrap{position:relative;width:80px;height:80px;margin:0 auto 18px}
-    .team-photo-ring{position:absolute;inset:-2px;border-radius:50%;background:conic-gradient(from 0deg,#4c1d95,#c084fc,#e9d5ff,#c084fc,#4c1d95);animation:spin 6s linear infinite;opacity:0;transition:opacity .3s}
+
+    /* Photo wrap — clickable */
+    .team-photo-wrap{
+      position:relative;width:80px;height:80px;
+      margin:0 auto 18px;cursor:pointer;
+    }
+    .team-photo-ring{
+      position:absolute;inset:-2px;border-radius:50%;
+      background:conic-gradient(from 0deg,#4c1d95,#c084fc,#e9d5ff,#c084fc,#4c1d95);
+      animation:spin 6s linear infinite;opacity:0;transition:opacity .3s;
+    }
     .team-card:hover .team-photo-ring{opacity:1}
-    .team-photo-placeholder{width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,var(--bg3),rgba(124,58,237,.25));border:2px solid rgba(192,132,252,.3);display:flex;align-items:center;justify-content:center;position:relative;z-index:1}
+    .team-photo-wrap:hover .team-photo-ring{opacity:1}
+
+    /* Actual photo */
+    .team-photo{
+      width:80px;height:80px;border-radius:50%;
+      object-fit:cover;object-position:center 15%;
+      border:2px solid rgba(192,132,252,.35);
+      position:relative;z-index:1;
+      background:var(--bg3);
+      display:block;
+      transition:transform .25s,filter .25s;
+    }
+    .team-photo-wrap:hover .team-photo{transform:scale(1.06);filter:brightness(1.08)}
+
+    /* Placeholder (no photo yet) */
+    .team-photo-placeholder{
+      width:80px;height:80px;border-radius:50%;
+      background:linear-gradient(135deg,var(--bg3),rgba(124,58,237,.25));
+      border:2px solid rgba(192,132,252,.3);
+      display:flex;align-items:center;justify-content:center;
+      position:relative;z-index:1;
+    }
     .team-photo-placeholder svg{opacity:.5}
-    .team-photo{width:80px;height:80px;border-radius:50%;object-fit:cover;border:2px solid rgba(192,132,252,.35);position:relative;z-index:1}
+
     .team-name{font-size:.93rem;font-weight:700;margin-bottom:5px;color:var(--white)}
     .team-role{font-size:.74rem;color:var(--purple-l);font-weight:700;letter-spacing:.05em;text-transform:uppercase}
     .team-add-hint{font-size:.7rem;color:var(--muted);margin-top:8px;opacity:.45}
+
+    /* ─── LIGHTBOX ─── */
+    .lightbox-overlay{
+      position:fixed;inset:0;z-index:9999;
+      background:rgba(14,8,24,0.92);
+      backdrop-filter:blur(18px);
+      display:flex;align-items:center;justify-content:center;
+      opacity:0;pointer-events:none;
+      transition:opacity .3s ease;
+    }
+    .lightbox-overlay.active{opacity:1;pointer-events:all}
+    .lightbox-inner{
+      display:flex;flex-direction:column;align-items:center;gap:18px;
+      animation:lbIn .35s cubic-bezier(.34,1.56,.64,1) both;
+    }
+    @keyframes lbIn{from{transform:scale(.7);opacity:0}to{transform:scale(1);opacity:1}}
+    .lightbox-img-ring{
+      position:relative;
+      width:min(320px,80vw);height:min(320px,80vw);
+    }
+    .lightbox-img-ring::before{
+      content:'';position:absolute;inset:-4px;border-radius:50%;
+      background:conic-gradient(from 0deg,#4c1d95,#c084fc,#e9d5ff,#c084fc,#4c1d95);
+      animation:spin 4s linear infinite;
+    }
+    .lightbox-img-ring::after{
+      content:'';position:absolute;inset:0;border-radius:50%;
+      box-shadow:0 0 60px rgba(124,58,237,.45),0 0 120px rgba(192,132,252,.15);
+    }
+    .lightbox-img-ring img{
+      position:absolute;inset:4px;
+      width:calc(100% - 8px);height:calc(100% - 8px);
+      border-radius:50%;object-fit:cover;object-position:center 15%;
+      z-index:1;
+    }
+    .lightbox-info{text-align:center}
+    .lightbox-name{font-size:1.25rem;font-weight:700;color:var(--white);margin-bottom:5px}
+    .lightbox-role{font-size:.8rem;color:var(--purple-l);text-transform:uppercase;letter-spacing:.08em;font-weight:700}
+    .lightbox-close{
+      position:fixed;top:22px;right:26px;
+      width:44px;height:44px;border-radius:50%;
+      background:rgba(192,132,252,.12);border:1px solid rgba(192,132,252,.3);
+      color:var(--purple-l);font-size:1.2rem;
+      display:flex;align-items:center;justify-content:center;
+      cursor:pointer;transition:all .2s;z-index:10000;
+    }
+    .lightbox-close:hover{background:rgba(192,132,252,.25);transform:scale(1.1)}
+
+    /* ─── PLANOS ─── */
+    .planos{background:var(--bg3)}
+    .planos-header{text-align:center;max-width:560px;margin:0 auto 64px}
+    .planos-header p{color:var(--muted);font-size:1rem;line-height:1.7}
+    .planos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .plano-card{background:rgba(192,132,252,.05);border:1px solid var(--border);border-radius:20px;padding:36px 28px;position:relative;transition:all .3s;display:flex;flex-direction:column}
+    .plano-card.destaque{background:linear-gradient(155deg,rgba(124,58,237,.18),rgba(192,132,252,.06));border-color:rgba(192,132,252,.5)}
+    .plano-card.destaque::before{content:'Mais popular';position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--purple);color:#fff;font-size:.68rem;font-weight:700;padding:4px 16px;border-radius:50px;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;box-shadow:0 4px 14px rgba(124,58,237,.5)}
+    .plano-card:hover{border-color:rgba(192,132,252,.48);transform:translateY(-6px);box-shadow:0 24px 48px rgba(0,0,0,.35),0 0 40px rgba(109,40,217,.14)}
+    .plano-nome{font-size:1.15rem;font-weight:900;margin-bottom:8px;color:var(--white)}
+    .plano-desc{font-size:.82rem;color:var(--muted);line-height:1.55;margin-bottom:20px}
+    .plano-preco{font-size:1.6rem;font-weight:900;color:var(--purple-l);letter-spacing:-.02em;margin-bottom:4px}
+    .plano-preco-label{font-size:.76rem;color:var(--muted);margin-bottom:22px}
+    .plano-sep{height:1px;background:var(--border);margin-bottom:22px}
+    .plano-lista{list-style:none;display:flex;flex-direction:column;gap:10px;flex:1}
+    .plano-lista li{display:flex;align-items:center;gap:10px;font-size:.84rem;color:var(--muted)}
+    .plano-lista li::before{content:'';width:18px;height:18px;border-radius:50%;flex-shrink:0;background:rgba(124,58,237,.22);border:1px solid rgba(192,132,252,.35);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='9' height='9' viewBox='0 0 24 24' fill='none' stroke='%23c084fc' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");background-repeat:no-repeat;background-position:center}
+    .plano-cta{display:block;text-align:center;margin-top:26px;padding:13px;border-radius:8px;font-weight:700;font-size:.87rem;text-decoration:none;border:1px solid rgba(192,132,252,.38);color:var(--purple-l);transition:all .25s}
+    .plano-card.destaque .plano-cta{background:var(--purple);border-color:var(--purple);color:#fff;box-shadow:0 4px 20px rgba(124,58,237,.4)}
+    .plano-cta:hover{background:var(--purple);border-color:var(--purple);color:#fff;box-shadow:0 8px 24px rgba(124,58,237,.45);transform:translateY(-1px)}
 
     /* ─── CTA ─── */
     .cta{background:var(--bg2);position:relative;overflow:hidden}
@@ -221,7 +319,7 @@
     <a href="#solucao">Solução</a>
     <a href="#metodo">Método</a>
     <a href="#equipe">Equipe</a>
-    <a href="https://wa.me/5511999999999" target="_blank" class="nav-cta">Falar agora</a>
+    <a href="https://wa.me/5518996450083" target="_blank" class="nav-cta">Falar agora</a>
   </nav>
   <div class="hamburger" id="hamburger" onclick="toggleMenu()">
     <span></span><span></span><span></span>
@@ -242,7 +340,7 @@
     <h1>Transforme sua empresa em uma<br><span>máquina de vendas</span></h1>
     <p class="hero-sub">Somos uma agência de performance focada em resultado real. Analisamos seu negócio como um todo, cortamos o que sangra e escalamos o que funciona.</p>
     <div class="hero-actions">
-      <a href="https://wa.me/5511999999999" target="_blank" class="btn-primary">
+      <a href="https://wa.me/5518996450083" target="_blank" class="btn-primary">
         Quero aumentar meu lucro
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
       </a>
@@ -351,11 +449,62 @@
       <p>Um time de especialistas em performance, gestão e crescimento — comprometidos com o resultado real do seu negócio.</p>
     </div>
     <div class="team-grid">
-      <div class="team-card"><div class="team-photo-wrap"><div class="team-photo-ring"></div><div class="team-photo-placeholder"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#c084fc" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div></div><div class="team-name">Nome do Chefe</div><div class="team-role">CEO &amp; Fundador</div><div class="team-add-hint">← adicionar foto</div></div>
-      <div class="team-card"><div class="team-photo-wrap"><div class="team-photo-ring"></div><div class="team-photo-placeholder"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#c084fc" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div></div><div class="team-name">Nome do Sócio</div><div class="team-role">Cargo / Área</div><div class="team-add-hint">← adicionar foto</div></div>
-      <div class="team-card"><div class="team-photo-wrap"><div class="team-photo-ring"></div><div class="team-photo-placeholder"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#c084fc" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div></div><div class="team-name">Nome do Sócio</div><div class="team-role">Cargo / Área</div><div class="team-add-hint">← adicionar foto</div></div>
-      <div class="team-card"><div class="team-photo-wrap"><div class="team-photo-ring"></div><div class="team-photo-placeholder"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#c084fc" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div></div><div class="team-name">Nome do Sócio</div><div class="team-role">Cargo / Área</div><div class="team-add-hint">← adicionar foto</div></div>
-      <div class="team-card"><div class="team-photo-wrap"><div class="team-photo-ring"></div><div class="team-photo-placeholder"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#c084fc" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div></div><div class="team-name">Nome do Sócio</div><div class="team-role">Cargo / Área</div><div class="team-add-hint">← adicionar foto</div></div>
+
+      <!-- SÓCIO 1 — CEO -->
+      <div class="team-card">
+        <div class="team-photo-wrap" onclick="openLightbox(this)">
+          <div class="team-photo-ring"></div>
+          <!-- FOTO: substitua o src pelo caminho da imagem -->
+          <img class="team-photo" src="Imagens/Raique.png" alt="CEO">
+        </div>
+        <div class="team-name">Nome do CEO</div>
+        <div class="team-role">CEO &amp; Fundador</div>
+      </div>
+
+      <!-- SÓCIO 2 -->
+      <div class="team-card">
+        <div class="team-photo-wrap" onclick="openLightbox(this)">
+          <div class="team-photo-ring"></div>
+          <img class="team-photo" src="Imagens/Gabriel sem fundo.png" alt="Sócio 2">
+        </div>
+        <div class="team-name">Nome do Sócio</div>
+        <div class="team-role">Cargo / Área</div>
+      </div>
+
+      <!-- SÓCIO 3 -->
+      <div class="team-card">
+        <div class="team-photo-wrap" onclick="openLightbox(this)">
+          <div class="team-photo-ring"></div>
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#c084fc" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+          <!-- <img class="team-photo" src="" alt="Sócio 3"> -->
+        </div>
+        <div class="team-name">Nome do Sócio</div>
+        <div class="team-role">Cargo / Área</div>
+      </div>
+
+      <!-- SÓCIO 4 -->
+      <div class="team-card">
+        <div class="team-photo-wrap" onclick="openLightbox(this)">
+          <div class="team-photo-ring"></div>
+           <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#c084fc" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+          <!-- <img class="team-photo" src="" alt="Sócio 4"> -->
+        </div>
+        <div class="team-name">Nome do Sócio</div>
+        <div class="team-role">Cargo / Área</div>
+      </div>
+
+      <!-- SÓCIO 5 -->
+      <div class="team-card">
+        <div class="team-photo-wrap" onclick="openLightbox(this)">
+          <div class="team-photo-ring"></div>
+           <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#c084fc" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+          <!-- FOTO: substitua o src pelo caminho da imagem -->
+          <!-- <img class="team-photo" src="FOTO_SOCIO5.png" alt="Sócio 5"> -->
+        </div>
+        <div class="team-name">Nome do Sócio</div>
+        <div class="team-role">Cargo / Área</div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -368,7 +517,7 @@
       <h2>Pronto para ter mais lucro no final do mês?</h2>
       <p>Converse com a nossa equipe. A gente analisa seu negócio, identifica as oportunidades e te mostra exatamente o que fazer para crescer.</p>
       <div class="hero-actions">
-        <a href="https://wa.me/5511999999999" target="_blank" class="btn-primary">
+        <a href="https://wa.me/5518996450083" target="_blank" class="btn-primary">
           Falar com especialista
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
@@ -404,10 +553,9 @@
     <div class="footer-col">
       <h4>Contato</h4>
       <ul>
-        <li><a href="https://wa.me/5511999999999" target="_blank">WhatsApp</a></li>
-        <li><a href="mailto:contato@metareel.com.br">contato@metareel.com.br</a></li>
-        <li>Instagram</li>
-        <li>LinkedIn</li>
+        <li><a href="https://wa.me/5518996450083" target="_blank">WhatsApp</a></li>
+        <li><a href="mailto:cmetareelperformance@gmail.com">metareelperformance@gmail.com</a></li>
+        <li><a href="https://www.instagram.com/metareel_performance?igsh=bDR2MnZxNTZiYmYw">Instagram</a></li>
       </ul>
     </div>
   </div>
@@ -417,12 +565,54 @@
   </div>
 </footer>
 
+<!-- LIGHTBOX -->
+<div class="lightbox-overlay" id="lightbox" onclick="closeLightbox(event)">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <div class="lightbox-inner">
+    <div style="position:relative">
+      <div class="lightbox-img-ring">
+        <img id="lightbox-img" src="" alt="">
+      </div>
+    </div>
+    <div class="lightbox-info">
+      <div class="lightbox-name" id="lightbox-name"></div>
+      <div class="lightbox-role" id="lightbox-role"></div>
+    </div>
+  </div>
+</div>
+
 <script>
+  // Menu
   function toggleMenu(){document.getElementById('main-nav').classList.toggle('open')}
   document.querySelectorAll('#main-nav a').forEach(a=>a.addEventListener('click',()=>document.getElementById('main-nav').classList.remove('open')));
+
+  // Scroll reveal
   const obs=new IntersectionObserver((e)=>{e.forEach(i=>{if(i.isIntersecting){i.target.classList.add('visible');obs.unobserve(i.target)}})},{threshold:.1,rootMargin:'0px 0px -60px 0px'});
   document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+  // Header shadow
   window.addEventListener('scroll',()=>{const h=document.getElementById('site-header');h.style.boxShadow=window.scrollY>40?'0 4px 30px rgba(0,0,0,.5)':'none'});
+
+  // Lightbox
+  function openLightbox(wrap){
+    const img = wrap.querySelector('.team-photo');
+    if(!img || !img.src || img.src.includes('FOTO_')) return;
+    const card = wrap.closest('.team-card');
+    const name = card.querySelector('.team-name')?.textContent || '';
+    const role = card.querySelector('.team-role')?.textContent || '';
+    document.getElementById('lightbox-img').src = img.src;
+    document.getElementById('lightbox-name').textContent = name;
+    document.getElementById('lightbox-role').textContent = role;
+    document.getElementById('lightbox').classList.add('active');
+    document.body.style.overflow='hidden';
+  }
+  function closeLightbox(e){
+    if(e && e.target!==document.getElementById('lightbox') && !e.target.classList.contains('lightbox-close')) return;
+    document.getElementById('lightbox').classList.remove('active');
+    document.body.style.overflow='';
+  }
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'){document.getElementById('lightbox').classList.remove('active');document.body.style.overflow=''}});
 </script>
+
 </body>
 </html>
