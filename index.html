@@ -162,7 +162,7 @@
     .team-photo{
       width:80px;height:80px;border-radius:50%;
       object-fit:cover;object-position:center 15%;
-      border:2px solid rgb(0, 0, 0);
+       border:2px solid rgba(192,132,252,.35);
       position:relative;z-index:1;
       background:var(--bg3);
       display:block;
@@ -174,7 +174,7 @@
     .team-photo-placeholder{
       width:80px;height:80px;border-radius:50%;
       background:linear-gradient(135deg,var(--bg3),rgba(124,58,237,.25));
-      border:2px solid rgba(252, 132, 132, 0.3);
+      border:2px solid rgba(192,132,252,.3);
       display:flex;align-items:center;justify-content:center;
       position:relative;z-index:1;
     }
@@ -187,7 +187,7 @@
     /* ─── LIGHTBOX ─── */
     .lightbox-overlay{
       position:fixed;inset:0;z-index:9999;
-      background:rgba(14,8,24,0.92);
+       background:rgba(14,8,24,0.92);
       backdrop-filter:blur(18px);
       display:flex;align-items:center;justify-content:center;
       opacity:0;pointer-events:none;
@@ -205,7 +205,7 @@
     }
     .lightbox-img-ring::before{
       content:'';position:absolute;inset:-4px;border-radius:50%;
-      background:conic-gradient(from 0deg,#a7a3a3,#afafaf,#b4aeae,#8b8787,#cacaca);
+      background:conic-gradient(from 0deg,#4c1d95,#c084fc,#e9d5ff,#c084fc,#4c1d95);
       animation:spin 4s linear infinite;
     }
     .lightbox-img-ring::after{
@@ -444,7 +444,7 @@
       <div class="team-card">
         <div class="team-photo-wrap" onclick="openLightbox(this)">
           <div class="team-photo-ring"></div>
-          <img class="team-photo" src="Imagens/Gabriel sem fundo.png" alt="Sócio 2">
+          <img class="team-photo" src="Imagens/Gabriel -.jpeg" alt="Sócio 2">
         </div>
         <div class="team-name">Nome do Sócio</div>
         <div class="team-role">Cargo / Área</div>
@@ -526,7 +526,6 @@
         <li><a href="#solucao">Solução</a></li>
         <li><a href="#metodo">Nosso Método</a></li>
         <li><a href="#equipe">Equipe</a></li>
-        <li><a href="#planos">Planos</a></li>
       </ul>
     </div>
     <div class="footer-col">
